@@ -11,4 +11,4 @@ Generative models such as Large Language Models (LLM) and Multimodal Large Langu
 ## Quick Access:
 - [Huggingface Dataset](https://huggingface.co/datasets/MLLMMU/MLLMU-Bench): Our benchmark is available on Huggingface. More updates comming soon. 
 - [Arxiv Paper](https://arxiv.org/abs/): Detailed information about the MLLMU-Bench dataset and its unique evaluation.
-- GitHub Repository: Access the source code, fine-tuning scripts, and additional resources for the TOFU dataset.
+- [GitHub Repository](https://github.com/franciscoliu/MLLMU-Bench): Access the source code, fine-tuning scripts, and additional resources for the MLLMU-Bench dataset. You may also use our training data to fine-tune your own "vanilla" model!
