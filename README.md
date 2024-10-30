@@ -13,4 +13,11 @@ Generative models such as Large Language Models (LLM) and Multimodal Large Langu
 - [Arxiv Paper](https://arxiv.org/abs/): Detailed information about the MLLMU-Bench dataset and its unique evaluation.
 - [GitHub Repository](https://github.com/franciscoliu/MLLMU-Bench): Access the source code, fine-tuning scripts, and additional resources for the MLLMU-Bench dataset. You may also use our training data to fine-tune your own "vanilla" model!
 
+## Installation
+You can directly install the required packages by running the following commands (the required python version is 3.10):
+```
+conda env create -f environment.yml
+```
+
+
 ## More details will be provided gradually throughout this week (Including detailed fine-tuning scripts, evaluation). Stay tuned, and sorry for the inconvenience!
