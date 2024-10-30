@@ -1,4 +1,4 @@
-<h2 align="center"> <a href="https://arxiv.org/abs/">Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench</a></h2>
+<h2 align="center"> <a href="https://arxiv.org/abs/2410.22108">Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench</a></h2>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest update.  </h2>
 
 <div align="center">    
@@ -10,7 +10,7 @@ Generative models such as Large Language Models (LLM) and Multimodal Large Langu
 
 ## Quick Access:
 - [Huggingface Dataset](https://huggingface.co/datasets/MLLMMU/MLLMU-Benchmark): Our benchmark is available on Huggingface. More updates comming soon. 
-- [Arxiv Paper](https://arxiv.org/abs/): Detailed information about the MLLMU-Bench dataset and its unique evaluation.
+- [Arxiv Paper](https://arxiv.org/abs/2410.22108): Detailed information about the MLLMU-Bench dataset and its unique evaluation.
 - [GitHub Repository](https://github.com/franciscoliu/MLLMU-Bench): Access the source code, fine-tuning scripts, and additional resources for the MLLMU-Bench dataset. You may also use our training data to fine-tune your own "vanilla" model!
 
 ## Installation
