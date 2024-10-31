@@ -40,5 +40,6 @@ python finetune.py
 --num_epochs 5 \
 --max_length 384
 ```
+You may need to adjust the `cache_dir` when loading the off-shelf model if you prefer to use model from local folders.
 
 ## More details will be provided gradually throughout this week (Including detailed fine-tuning scripts, evaluation). Stay tuned, and sorry for the inconvenience!
