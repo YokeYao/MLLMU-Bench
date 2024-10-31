@@ -21,5 +21,14 @@ conda activate mllm_unlearn
 pip install -r requirements.txt
 ```
 
+## Model Finetuning
+You can use our Train data from [Huggingface](https://huggingface.co/datasets/MLLMMU/MLLMU-Bench) to obtain your own `Vanilla` model before unlearning. Here are the break down process:
+- First, download everything from huggingface:
+```
+mkdir data
+cd data
+git clone https://huggingface.co/datasets/MLLMMU/MLLMU-Bench
+```
+- Next, run the script from `finetune.py`, where it handles data processing and starts finetuning process. Here, we implemented our finetuning pipeline using Accelerator, if you want to use trainer, you may need to check the [official documentation](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/LLaVa/Fine_tune_LLaVa_on_a_custom_dataset_(with_PyTorch_Lightning).ipynb). 
 
 ## More details will be provided gradually throughout this week (Including detailed fine-tuning scripts, evaluation). Stay tuned, and sorry for the inconvenience!
