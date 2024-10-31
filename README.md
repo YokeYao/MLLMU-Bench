@@ -42,4 +42,4 @@ python finetune.py
 ```
 You may need to adjust the `cache_dir` when loading the off-shelf model if you prefer to use model from local folders.
 
-## More details will be provided gradually throughout this week (Including detailed fine-tuning scripts, evaluation). Stay tuned, and sorry for the inconvenience!
+## More details about evaluation scripts will be provided throughout this week. Stay tuned, and sorry for the inconvenience!
