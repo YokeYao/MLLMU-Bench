@@ -223,10 +223,6 @@ def train_collate_fn_idefics(examples, processor, args):
 
 
 def train_collate_fn_llava(examples, processor, args):
-    # max_length = 384
-    # MODEL_ID = "llava-hf/llava-1.5-7b-hf"
-    # processor = AutoProcessor.from_pretrained(MODEL_ID)
-    # processor.tokenizer.padding_side = "right"  # during training, one always uses padding on the right
     images = []
     texts = []
 
