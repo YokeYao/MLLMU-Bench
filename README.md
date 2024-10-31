@@ -42,4 +42,14 @@ python finetune.py
 ```
 You may need to adjust the `cache_dir` when loading the off-shelf model if you prefer to use model from local folders.
 
+## Evaluation
+After you download everything from HF, you can obtain model's unlearning performace across different perspectives (i.e. unlearning effectiveness, generalizability, model utility):
+```
+python eval.py
+```
+To test model utility from other perspectives such as [MMMU](https://github.com/MMMU-Benchmark/MMMU) and [LLaVA-Bench](https://github.com/haotian-liu/LLaVA/blob/main/docs/LLaVA_Bench.md), please refer to the formal repositories.
+
+
+
+
 ## More details about evaluation scripts will be provided throughout this week. Stay tuned, and sorry for the inconvenience!
