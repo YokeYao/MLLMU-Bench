@@ -29,6 +29,16 @@ mkdir data
 cd data
 git clone https://huggingface.co/datasets/MLLMMU/MLLMU-Bench
 ```
-- Next, run the script from `finetune.py`, where it handles data processing and starts finetuning process. Here, we implemented our finetuning pipeline using Accelerator, if you want to use trainer, you may need to check the [official documentation](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/LLaVa/Fine_tune_LLaVa_on_a_custom_dataset_(with_PyTorch_Lightning).ipynb). 
+- Next, run the script from `finetune.py`, where it handles data processing and starts finetuning process. Here, we implemented our finetuning pipeline using Accelerator, if you want to use trainer, you may need to check the [official documentation](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/LLaVa/Fine_tune_LLaVa_on_a_custom_dataset_(with_PyTorch_Lightning).ipynb).
+```
+python finetune.py
+--model_id llava-hf/llava-1.5-7b-hf \
+--save_dir [SAVED_DIR] \
+--data_dir data/MLLMU-Bench/ft_Data/train-00000-of-00001.parquet \
+--batch_size 4 \
+--lr 2e-5 \
+--num_epochs 5 \
+--max_length 384
+```
 
 ## More details will be provided gradually throughout this week (Including detailed fine-tuning scripts, evaluation). Stay tuned, and sorry for the inconvenience!
