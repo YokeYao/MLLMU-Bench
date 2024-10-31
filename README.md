@@ -14,9 +14,11 @@ Generative models such as Large Language Models (LLM) and Multimodal Large Langu
 - [GitHub Repository](https://github.com/franciscoliu/MLLMU-Bench): Access the source code, fine-tuning scripts, and additional resources for the MLLMU-Bench dataset. You may also use our training data to fine-tune your own "vanilla" model!
 
 ## Installation
-You can directly install the required packages by running the following commands (the required python version is 3.10):
+You can install the required packages by running the following commands:
 ```
-conda env create -f environment.yml
+conda create --name mllm_unlearn python=3.10
+conda activate mllm_unlearn
+pip install -r requirements.txt
 ```
 
 
