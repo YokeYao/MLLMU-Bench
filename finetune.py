@@ -47,7 +47,6 @@ def find_all_linear_names(model):
     return list(lora_module_names)
 
 
-# Example usage:
 def load_model_and_processor(model_id):
     """
     Load the model and processor based on the provided model_id.
@@ -60,8 +59,6 @@ def load_model_and_processor(model_id):
             model_id,
             torch_dtype=torch.float16,
             device_map="auto",
-            # quantization_config=bnb_config,
-            cache_dir="/afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/model/llava-1.5-7b-hf",
         )
         processor = AutoProcessor.from_pretrained(model_id)
         # Additional processor configuration if necessary
@@ -69,20 +66,12 @@ def load_model_and_processor(model_id):
         processor.tokenizer.add_tokens(["<image>", "<pad>"], special_tokens=True)
 
     elif model_id.startswith("HuggingFaceM4"):
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16
-        )
-        # Load LLAVA Next model and processor
         print("Loading idefics2 model...")
         model = Idefics2ForConditionalGeneration.from_pretrained(
             "HuggingFaceM4/idefics2-8b",
             torch_dtype=torch.float16,
             device_map="auto",
-            # quantization_config=bnb_config,
             low_cpu_mem_usage=True,
-            cache_dir="/afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/model/idfics2-8b",
         )
         processor = AutoProcessor.from_pretrained(
             "HuggingFaceM4/idefics2-8b",
@@ -106,7 +95,6 @@ def main(args):
     model, processor = load_model_and_processor(args.model_id)
     print("Processor Tokenizer Length: ", len(processor.tokenizer)) #128257
 
-    ################## Update #########################
     tokenizer = AutoTokenizer.from_pretrained(args.model_id)
     print("Tokenizer Length: ", len(tokenizer))
 
@@ -118,8 +106,6 @@ def main(args):
     if len(tokenizer) > model.get_input_embeddings().weight.shape[0]:
         print("WARNING: Resizing the embedding matrix to match the tokenizer vocab size.")
         model.resize_token_embeddings(len(tokenizer))
-
-    ################## Update #########################
 
 
     # LoRA configuration
@@ -253,14 +239,3 @@ if __name__ == "__main__":
 
     # Call main function
     main(args)
-
-    # llava save: /afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/saved_model/LLaVA_7b_hf_vanilla
-    # llava hf: llava-hf/llava-1.5-7b-hf
-    # llava cache: /afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/model/llava-1.5-7b-hf
-    # llava max_length 384
-
-    # idefics2 save: /afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/saved_model/idefics2_8b_vanilla
-    # idefics2 hf: HuggingFaceM4/idefics2-8b
-    # idefics2 cache: /afs/crc.nd.edu/group/dmsquare/vol1/zliu29/mllm_unlearn/model/idfics2-8b
-    # idefics2 max_length 384
-
