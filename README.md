@@ -43,6 +43,7 @@ python finetune.py
 You may need to adjust the `cache_dir` when loading the off-shelf model if you prefer to use model from local folders.
 
 ## Evaluation
+### Different Tasks evaluation
 After you download everything from HF, you can obtain model's unlearning performace across different perspectives (i.e. unlearning effectiveness, generalizability, model utility):
 ```
 python eval.py
@@ -62,3 +63,13 @@ python eval.py \
 
 ```
 To test model utility from other perspectives such as [MMMU](https://github.com/MMMU-Benchmark/MMMU) and [LLaVA-Bench](https://github.com/haotian-liu/LLaVA/blob/main/docs/LLaVA_Bench.md), please refer to the formal repositories.
+
+### Factuality Score evaluation
+To evaluate the factuality score of model generation, you can directly run the `eval_gpt.py` file. You need to first add your openai API key to your environment. An example could be refer to the official [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety). You may need to modify `input_folder` variable in the file to evaluate all generated content saved in the folder. 
+```
+python eval_gpt.py
+```
+
+
+
+
