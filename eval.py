@@ -845,7 +845,7 @@ def main():
     # Define paths to the Parquet files for "forget" and "retain" datasets
     forget_parquet_file = os.path.join(forget_folder, f"train-00000-of-00001.parquet")
     retain_parquet_file = os.path.join(retain_folder, f"train-00000-of-00001.parquet")
-    real_paraquet_file = os.path.join(args.celebrity_data, f"train-00000-of-00001.parquet")
+    # real_paraquet_file = os.path.join(args.celebrity_data, f"train-00000-of-00001.parquet")
 
     processor = AutoProcessor.from_pretrained(args.model_id)
     tokenizer = AutoTokenizer.from_pretrained(args.model_id)
@@ -973,7 +973,7 @@ def main():
 
     print("### Evaluating Real Celebrity Set ###")
 
-    real_fill_in_the_blank_result = evaluate_fill_in_the_blank(parquet_file=real_paraquet_file,
+    real_fill_in_the_blank_result = evaluate_fill_in_the_blank(parquet_file=args.celebrity_data,
                                                                  few_shot_parquet_file=args.few_shot_data,
                                                                  processor=processor,
                                                                  tokenizer=tokenizer,
@@ -981,7 +981,7 @@ def main():
                                                                  args=args,
                                                                  mode="retain_celebrity")
 
-    real_classification_result = evaluate_classification(parquet_file=real_paraquet_file,
+    real_classification_result = evaluate_classification(parquet_file=args.celebrity_data,
                                                            few_shot_parquet_file=args.few_shot_data,
                                                            processor=processor,
                                                            tokenizer=tokenizer,
@@ -989,7 +989,7 @@ def main():
                                                            args=args,
                                                            mode="retain_celebrity")
 
-    real_generation_result = evaluate_generation(parquet_file=real_paraquet_file,
+    real_generation_result = evaluate_generation(parquet_file=args.celebrity_data,
                                                    processor=processor,
                                                    tokenizer=tokenizer,
                                                    model=model,
