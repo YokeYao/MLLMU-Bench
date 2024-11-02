@@ -70,6 +70,16 @@ To evaluate the factuality score of model generation, you can directly run the `
 python eval_gpt.py
 ```
 
+## Citing Our Work
 
+If you find our codebase and dataset beneficial, please cite our work:
+```
+@article{liu2024protecting,
+  title={Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench},
+  author={Liu, Zheyuan and Dou, Guangyao and Jia, Mengzhao and Tan, Zhaoxuan and Zeng, Qingkai and Yuan, Yongle and Jiang, Meng},
+  journal={arXiv preprint arXiv:2410.22108},
+  year={2024}
+}
+```
 
 
