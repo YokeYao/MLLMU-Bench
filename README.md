@@ -47,9 +47,18 @@ After you download everything from HF, you can obtain model's unlearning perform
 ```
 python eval.py
 ```
+with following commands:
+```
+python eval.py \
+ --model_id [OFF_SHELF_MODEL_ID] (e.g. llava-hf/llava-1.5-7b-hf) \
+ --cache_path [SAVED_VANILLA_MODEL_PATH] \
+ --test_data data/MLLMU-Bench/Test_Set \
+ --few_shot_data data/MLLMU-Bench/Full_Set/train-00000-of-00001.parquet \
+ --data_split_folder data/MLLMU-Bench \
+ --celebrity_data data/MLLMU-Bench/Retain_Set/train-00000-of-00001.parquet \
+ --output_file llava-1.5-7b-vanilla \
+ --output_folder ../eval_result/llava_7b_hf_vanilla_test2 \
+ --forget_ratio 5 \
+
+```
 To test model utility from other perspectives such as [MMMU](https://github.com/MMMU-Benchmark/MMMU) and [LLaVA-Bench](https://github.com/haotian-liu/LLaVA/blob/main/docs/LLaVA_Bench.md), please refer to the formal repositories.
-
-
-
-
-## More details about evaluation scripts will be provided throughout this week. Stay tuned, and sorry for the inconvenience!
