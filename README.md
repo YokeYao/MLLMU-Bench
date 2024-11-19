@@ -70,6 +70,9 @@ To evaluate the factuality score of model generation, you can directly run the `
 python eval_gpt.py
 ```
 
+### Model Weights
+We have uploaded our model weights (including vanilla and baselines) to our HF page [here](https://huggingface.co/MLLMMU).
+
 ## Citing Our Work
 
 If you find our codebase and dataset beneficial, please cite our work:
