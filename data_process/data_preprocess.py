@@ -195,7 +195,7 @@ def train_collate_fn_idefics(examples, processor, args):
         images=images,
         padding=True,
         truncation=True,
-        max_length=args.max_length,
+        # max_length=args.max_length,
         return_tensors="pt"
     )
 
@@ -245,7 +245,7 @@ def train_collate_fn_llava(examples, processor, args):
         images=images,
         padding=True,
         truncation=True,
-        max_length=args.max_length,
+        # max_length=args.max_length,
         return_tensors="pt"
     )
     # Mask labels
