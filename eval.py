@@ -793,7 +793,7 @@ def evaluate_generation(parquet_file, processor, tokenizer, model, args, mode="d
     if not os.path.exists(args.output_folder):
         os.makedirs(args.output_folder)
 
-    with open(f'{args.output_folder}/{args.output_file}_generation_results_official.json', 'w') as f:
+    with open(f'{args.output_folder}/{mode}_generation_results.json', 'w') as f:
         json.dump(results, f, indent=4)
 
     # Calculate and print average ROUGE and BLEU scores
