@@ -34,7 +34,7 @@ cd data
 git clone https://huggingface.co/datasets/MLLMMU/MLLMU-Bench
 ```
 - Next, run the script from `finetune.py`, where it handles data processing and starts finetuning process. Here, we implemented our finetuning pipeline using Accelerator, if you want to use trainer, you may need to check the [official documentation](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/LLaVa/Fine_tune_LLaVa_on_a_custom_dataset_(with_PyTorch_Lightning).ipynb).
-```
+```python
 python finetune.py
 --model_id llava-hf/llava-1.5-7b-hf \
 --save_dir [SAVED_DIR] \
@@ -52,11 +52,11 @@ You can train your own baselines using our dataset. A detailed instruction can b
 ## Evaluation :straight_ruler:
 ### Different Tasks evaluation
 After you download everything from HF, you can obtain model's unlearning performace across different perspectives (i.e. unlearning effectiveness, generalizability, model utility):
-```
+```python
 python eval.py
 ```
 with following commands:
-```
+```python
 python eval.py \
  --model_id [OFF_SHELF_MODEL_ID] (e.g. llava-hf/llava-1.5-7b-hf) \
  --cache_path [SAVED_VANILLA_MODEL_PATH] \
@@ -73,7 +73,7 @@ To test model utility from other perspectives such as [MMMU](https://github.com/
 
 ### Factuality Score evaluation:
 To evaluate the factuality score of model generation, you can directly run the `eval_gpt.py` file. You need to first add your openai API key to your environment. An example could be refer to the official [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety). You may need to modify `input_folder` variable in the file to evaluate all generated content saved in the folder. 
-```
+```python
 python eval_gpt.py
 ```
 
