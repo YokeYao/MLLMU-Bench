@@ -31,4 +31,17 @@ python GA_Difference.py \
 	--max_length 384
 ```
 
+## KL Minimization
+```python
+python KL_Min.py \
+	--model_id llava-hf/llava-1.5-7b-hf \
+	--vanilla_dir [Vanilla Model Path] \
+	--data_split_dir [Your local data Path that you downloaded from [HF](https://huggingface.co/MLLMMU/baseline_train_split/tree/main)] \
+	--forget_split_ratio 5 \
+	--save_dir [GA Saved Path] \
+	--batch_size 4 \
+	--lr 2e-5 \
+	--num_epochs 1 \
+	--max_length 384
+```
 More instructions are coming, stay tuned.
