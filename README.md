@@ -5,10 +5,10 @@
 <img src="./asset/demo.jpg" width="100%" height="50%">
 </div>
 
-## Abstract 
+## Abstract :bulb:
 Generative models such as Large Language Models (LLM) and Multimodal Large Language models (MLLMs) trained on massive web corpora can memorize and disclose individuals' confidential and private data, raising legal and ethical concerns. While many previous works have addressed this issue in LLM via machine unlearning, it remains largely unexplored for MLLMs. To tackle this challenge, we introduce Multimodal Large Language Model Unlearning Benchmark (MLLMU-Bench), a novel benchmark aimed at advancing the understanding of multimodal machine unlearning. MLLMU-Bench consists of 500 fictitious profiles and 153 profiles for public celebrities, each profile feature over 14 customized question-answer pairs, evaluated from both multimodal (image+text) and unimodal (text) perspectives. The benchmark is divided into four sets to assess unlearning algorithms in terms of efficacy, generalizability, and model utility. Finally, we provide baseline results using existing generative model unlearning algorithms. Surprisingly, our experiments show that unimodal unlearning algorithms excel in generation and cloze tasks, while multimodal unlearning approaches perform better in classification tasks with multimodal inputs. 
 
-## News
+## News :newspaper:
 - **[Dec 12, 2024]** Upload baseline train data to HF, you now may train your own baselines or come up with other unlearning approaches! The link can be referred to [here](https://huggingface.co/MLLMMU/baseline_train_split).
 
 ## Quick Access:
@@ -17,7 +17,7 @@ Generative models such as Large Language Models (LLM) and Multimodal Large Langu
 - [Arxiv Paper](https://arxiv.org/abs/2410.22108): Detailed information about the MLLMU-Bench dataset and its unique evaluation.
 - [GitHub Repository](https://github.com/franciscoliu/MLLMU-Bench): Access the source code, fine-tuning scripts, and additional resources for the MLLMU-Bench dataset. You may also use our training data to fine-tune your own "vanilla" model!
 
-## Installation
+## Installation :books:
 You can install the required packages by running the following commands:
 ```
 conda create --name mllm_unlearn python=3.10
@@ -25,7 +25,7 @@ conda activate mllm_unlearn
 pip install -r requirements.txt
 ```
 
-## Model Finetuning
+## Model Finetuning :wrench:
 You can use our Train data from [Huggingface](https://huggingface.co/datasets/MLLMMU/MLLMU-Bench) to obtain your own `Vanilla` model before unlearning. Here are the break down process:
 - First, download everything from huggingface:
 ```
@@ -46,7 +46,7 @@ python finetune.py
 ```
 You may need to adjust the `cache_dir` when loading the off-shelf model if you prefer to use model from local folders.
 
-## Evaluation
+## Evaluation :straight_ruler:
 ### Different Tasks evaluation
 After you download everything from HF, you can obtain model's unlearning performace across different perspectives (i.e. unlearning effectiveness, generalizability, model utility):
 ```
@@ -77,7 +77,7 @@ python eval_gpt.py
 ### Model Weights
 We have uploaded our model weights (including vanilla and baselines) to our HF page [here](https://huggingface.co/MLLMMU).
 
-## Citing Our Work
+## Citing Our Work :star2:
 
 If you find our codebase and dataset beneficial, please cite our work:
 ```
