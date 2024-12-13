@@ -15,3 +15,5 @@ python GA.py \
 	--num_epochs 1 \
 	--max_length 384
 ```
+
+More instructions are coming, stay tuned.
