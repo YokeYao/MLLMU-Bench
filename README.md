@@ -25,7 +25,7 @@ conda create --name mllm_unlearn python=3.10
 conda activate mllm_unlearn
 pip install -r requirements.txt
 ```
-**[Alert!]:exclamation: You may encounter a shape mismatch error when running the Idefics2 model in the above environment, as it is not compatible with `Transformers` versions 4.41.0 to 4.43.3 (inclusive), according to its official website. You may need to manually downgrade the `Transformers` version.**
+**[Alert! :exclamation:] You may encounter a shape mismatch error when running the Idefics2 model in the above environment, as it is not compatible with `Transformers` versions 4.41.0 to 4.43.3 (inclusive), according to its official website. You may need to manually downgrade the `Transformers` version.**
 
 ## Model Finetuning :wrench:
 You can use our Train data from [Huggingface](https://huggingface.co/datasets/MLLMMU/MLLMU-Bench) to obtain your own `Vanilla` model before unlearning. Here are the break down process:
