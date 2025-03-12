@@ -262,7 +262,7 @@ def evaluate_classification(parquet_file, few_shot_parquet_file, processor, toke
     if args.model_id.startswith("HuggingFaceM4"):
         selected_ids = random.sample(id_list, 1)
     elif args.model_id.startswith("llava"):
-        selected_ids = random.sample(id_list, 2)
+        selected_ids = random.sample(id_list, 1)
 
     print(f"Selected few-shot IDs: {selected_ids}")
 
@@ -329,6 +329,7 @@ def evaluate_classification(parquet_file, few_shot_parquet_file, processor, toke
         image = Image.open(BytesIO(image_data)).convert("RGB")
 
         # Iterate through each image-textual question
+        print("########################## Processing Image-Textual Questions ########################## ")
         for idx, question_data in enumerate(classification_questions.get("Image_Textual_Questions", [])):
             if row["ID"] in few_shot_question_indices and idx in few_shot_question_indices[row["ID"]]["image_textual"]:
                 continue  # Skip few-shot question
@@ -376,8 +377,14 @@ def evaluate_classification(parquet_file, few_shot_parquet_file, processor, toke
             if predicted_answer == correct_answer:
                 total_image_textual_correct += 1
             total_image_textual_questions += 1
+            print("Prompt: ", prompt)
+            print("Model Answer: ", predicted_answer)
+            print("Correct Answer: ", correct_answer)
+            print("The model answer is: ", predicted_answer == correct_answer)
+            print("\n")
 
         # Process Pure_Text_Questions
+        print("########################## Processing Pure-textual Questions ########################## ")
         for idx, question_data in enumerate(classification_questions.get("Pure_Text_Questions", [])):
             if row["ID"] in few_shot_question_indices and idx in few_shot_question_indices[row["ID"]]["pure_text"]:
                 continue  # Skip few-shot question
