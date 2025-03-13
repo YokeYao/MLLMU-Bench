@@ -35,7 +35,7 @@ mkdir data
 cd data
 git clone https://huggingface.co/datasets/MLLMMU/MLLMU-Bench
 ```
-- For Finetuned vanilla model, you can find it in our HF [here](https://huggingface.co/MLLMMU/LLaVA_Vanilla).
+- For Finetuned vanilla model, you can find it in our HF models here: [LLaVA Model](https://huggingface.co/MLLMMU/LLaVA_Vanilla) and [Idefics2 Model](https://huggingface.co/MLLMMU/Idefics2_Vanilla).
 - Alternatively, you may finetune the off-the-shelf model with our dataset to create your own vanilla model, which can be achieved by `finetune.py`, where it handles data processing and starts finetuning process. Here, we implemented our finetuning pipeline using Accelerator, if you want to use trainer, you may need to check the [official documentation](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/LLaVa/Fine_tune_LLaVa_on_a_custom_dataset_(with_PyTorch_Lightning).ipynb).
 ```python
 python finetune.py
@@ -73,6 +73,8 @@ python eval.py \
 
 ```
 To test model utility from other perspectives such as [MMMU](https://github.com/MMMU-Benchmark/MMMU) and [LLaVA-Bench](https://github.com/haotian-liu/LLaVA/blob/main/docs/LLaVA_Bench.md), please refer to the formal repositories.
+
+**[Tips! :exclamation:] If you run into the case where the generated answer is `None` in classification task, try to adjust the number of few-shot samples.**
 
 ### Factuality Score evaluation:
 To evaluate the factuality score of model generation, you can directly run the `eval_gpt.py` file. You need to first add your openai API key to your environment. An example could be refer to the official [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety). You may need to modify `input_folder` variable in the file to evaluate all generated content saved in the folder. 
